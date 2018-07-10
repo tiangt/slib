@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/lv_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <TextView
+            android:id="@+id/tv_letter"
+            android:visibility="gone"
+            tools:text="A"
+            tools:visibility="visible"
+            android:layout_centerInParent="true"
+            android:textSize="42dp"
+            android:background="@color/alpha_gray"
+            android:paddingLeft="@dimen/alphabet_padding_10dp"
+            android:paddingRight="@dimen/alphabet_padding_10dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+    <com.niko.slib.widgets.AlphabetView
+            android:id="@+id/alphabet_view"
+            android:layout_width="30dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/alphabet_padding_10dp"
+            android:paddingRight="@dimen/alphabet_padding_10dp"
+            android:layout_height="match_parent"/>
+</RelativeLayout>

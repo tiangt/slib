@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="alpha_gray">#57aeaeae</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="color_999">#999999</color>
+    <color name="default_text_color">#666666</color>
+    <color name="green">#00ff00</color>
+    <color name="hint_bg">#33aeaeae</color>
+    <color name="red">#ff0000</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <declare-styleable name="PullToRefresh">
+        <attr name="ptrRefreshableViewBackground" format="reference|color" />
+        <attr name="ptrHeaderBackground" format="reference|color" />
+        <attr name="ptrHeaderTextColor" format="reference|color" />
+        <attr name="ptrHeaderSubTextColor" format="reference|color" />
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0" />
+            <flag name="pullFromStart" value="0x1" />
+            <flag name="pullFromEnd" value="0x2" />
+            <flag name="both" value="0x3" />
+            <flag name="manualOnly" value="0x4" />
+
+
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+        </attr>
+        <attr name="ptrShowIndicator" format="reference|boolean" />
+        <attr name="ptrDrawable" format="reference" />
+        <attr name="ptrDrawableStart" format="reference" />
+        <attr name="ptrDrawableEnd" format="reference" />
+        <attr name="ptrOverScroll" format="reference|boolean" />
+        <attr name="ptrHeaderTextAppearance" format="reference" />
+        <attr name="ptrSubHeaderTextAppearance" format="reference" />
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0" />
+            <flag name="flip" value="0x1" />
+        </attr>
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+        <attr name="ptrListViewExtrasEnabled" format="reference|boolean" />
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+        <attr name="ptrAdapterViewBackground" format="reference|color" />
+        <attr name="ptrDrawableTop" format="reference" />
+        <attr name="ptrDrawableBottom" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="roundedimageview">
+        <attr name="border_inside_color" format="integer" />
+        <attr name="border_outside_color" format="integer" />
+        <attr name="border_thickness" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="squareimageview">
+        <attr name="reference" format="string" />
+    </declare-styleable>
+    <dimen name="alphabet_padding_10dp">10dp</dimen>
+    <dimen name="alphabet_text_size">14dp</dimen>
+    <dimen name="common_10dp">10dp</dimen>
+    <dimen name="common_16dp">16dp</dimen>
+    <dimen name="default_text_size">14dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <item name="gridview" type="id" />
+    <item name="scrollview" type="id" />
+    <item name="webview" type="id" />
+    <!--<string name="app_name">ACTIVITY_ENTRY_NAME</string>-->
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_pull_label">上拉加载  </string>
+    <string name="pull_to_refresh_refreshing_label">正在加载</string>
+    <string name="pull_to_refresh_release_label">释放加载  </string>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="view_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@drawable/view_divider</item>
+    </style>
+</resources>
