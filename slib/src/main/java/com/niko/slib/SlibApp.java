@@ -24,7 +24,7 @@ public class SlibApp extends Application {
 
     public static synchronized SlibApp getInstance() {
         if (mInstance == null) {
-            throw new RuntimeException("请先定义自己的Application类让其继承com.scanor.slib.SlibApp,并在AndroidManifest文件中注册");
+            throw new RuntimeException("请先定义自己的Application类让其继承com.niko.slib.SlibApp,并在AndroidManifest文件中注册");
         }
         return mInstance;
     }
