@@ -36,7 +36,7 @@ import com.niko.slib.R;
 @SuppressLint("ViewConstructor")
 public class IndicatorLayout extends FrameLayout implements AnimationListener {
 
-	static final int DEFAULT_ROTATION_ANIMATION_DURATION = 150;
+	static final int DEFAULT_ROTATION_ANIMATION_DURATION = 1200;
 
 	private Animation mInAnim, mOutAnim;
 	private ImageView mArrowImageView;
