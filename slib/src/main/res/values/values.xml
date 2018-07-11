@@ -69,9 +69,9 @@
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
     <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
-    <string name="pull_to_refresh_pull_label">上拉加载  </string>
+    <string name="pull_to_refresh_pull_label">上拉加载更多</string>
     <string name="pull_to_refresh_refreshing_label">正在加载</string>
-    <string name="pull_to_refresh_release_label">释放加载  </string>
+    <string name="pull_to_refresh_release_label">上拉加载更多</string>
 
     <style name="loading_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -79,6 +79,7 @@
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
     <style name="view_divider">

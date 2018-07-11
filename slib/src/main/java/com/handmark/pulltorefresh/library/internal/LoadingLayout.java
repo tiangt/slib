@@ -79,6 +79,8 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
         mSubHeaderText = mInnerLayout.findViewById(R.id.pull_to_refresh_sub_text);
         mHeaderImage = mInnerLayout.findViewById(R.id.pull_to_refresh_image);
 
+        mHeaderProgress.setIndeterminateDrawable(getResources().getDrawable(R.drawable.progress));
+
         LayoutParams lp = (LayoutParams) mInnerLayout.getLayoutParams();
 
         switch (mode) {
@@ -89,6 +91,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
                 mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
                 mRefreshingLabel = context.getString(R.string.pull_to_refresh_from_bottom_refreshing_label);
                 mReleaseLabel = context.getString(R.string.pull_to_refresh_from_bottom_release_label);
+                mInnerLayout.findViewById(R.id.fl_pull_to_refresh_image).setVisibility(GONE);
                 break;
 
             case PULL_FROM_START:
