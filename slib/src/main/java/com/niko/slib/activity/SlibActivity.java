@@ -23,7 +23,6 @@ import android.widget.LinearLayout;
 
 import com.niko.slib.MyActivityManager;
 import com.niko.slib.R;
-import com.niko.slib.SlibApp;
 import com.niko.slib.utils.DimenUtils;
 import com.niko.slib.utils.NetUtils;
 import com.niko.slib.widgets.LoadingDialog;
@@ -37,13 +36,13 @@ import java.lang.reflect.Field;
 /**
  * Created by niko on 15/10/14.
  */
-public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity implements TitleBar.OnTitleBarClickListener{
+public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity implements TitleBar.OnTitleBarClickListener {
     protected final String TAG = this.getClass().getName();
     protected T mDataBinding;
     private View mStatusBarBackgroundView;
     private TitleBar mTitleBar;
     private LoadingDialog mLoadingDialog;
-    private NetStateReceiver mNetStateReceiver;
+    //    private NetStateReceiver mNetStateReceiver;
     private PopupBannerView mPopupBannerView;
     private boolean mEnableNetNotify = true;
 
@@ -54,10 +53,10 @@ public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity i
 
         //往栈中插入一个
         MyActivityManager.getManager().push(this);
-        mLoadingDialog= new LoadingDialog(this);
+        mLoadingDialog = new LoadingDialog(this);
 
         mPopupBannerView = new PopupBannerView(this, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        mNetStateReceiver = new NetStateReceiver();
+//        mNetStateReceiver = new NetStateReceiver();
     }
 
     protected void initTitleBar() {
@@ -73,7 +72,7 @@ public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity i
         super.onStart();
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(mNetStateReceiver, filter);
+//        registerReceiver(mNetStateReceiver, filter);
     }
 
     public PopupBannerView getPopupBannerView() {
@@ -92,7 +91,8 @@ public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity i
         mLoadingDialog.dismiss();
     }
 
-    protected void onCreateMenu(Menu menu) {}
+    protected void onCreateMenu(Menu menu) {
+    }
 
     public TitleBar getTitleBar() {
         return mTitleBar;
@@ -219,7 +219,7 @@ public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity i
 
     @Override
     protected void onStop() {
-        unregisterReceiver(mNetStateReceiver);
+//        unregisterReceiver(mNetStateReceiver);
         super.onStop();
     }
 
@@ -242,7 +242,7 @@ public class SlibActivity<T extends ViewDataBinding> extends AppCompatActivity i
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (mEnableNetNotify && ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())){
+            if (mEnableNetNotify && ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())) {
                 if (NetUtils.isNetworkAvailableNoBroadcast()) {
                     onNetReconnect();
                 } else {
